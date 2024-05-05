@@ -13,20 +13,17 @@
      - Tích hợp với Spring MVC các tính năng thực hiện điều kiện, vòng lặp và biểu thức
    + Spring Security: cung cấp các tính năng xác thực và phân quyền
 - Spring Data JPA
-JPA và ORM:
-JPA là một API của Java để tương tác với cơ sở dữ liệu quan hệ.
-Spring Data JPA sử dụng JPA để thực hiện ánh xạ giữa các đối tượng Java và bảng trong cơ sở dữ liệu.
-Repository Pattern:
-Spring Data JPA thúc đẩy việc sử dụng Repository pattern, nơi các phương thức tiêu biểu cho các thao tác cơ bản với cơ sở dữ liệu được tự động tạo ra dựa trên tên của phương thức.
-Quản Lý Truy Vấn:
-Sử dụng các quy ước đặt tên phương thức để tạo ra các câu truy vấn cơ sở dữ liệu mà không cần phải viết các truy vấn SQL chi tiết.
-Cung cấp annotation như @Query để viết truy vấn tùy chỉnh nếu cần.
-Cơ Sở Dữ Liệu Nhiều Loại:
-Spring Data JPA hỗ trợ nhiều loại cơ sở dữ liệu quan hệ thông qua việc tích hợp với các implementation JPA khác nhau như Hibernate, EclipseLink, và OpenJPA.
-Tích Hợp với Spring Boot:
-Tích hợp dễ dàng với Spring Boot, giúp tự động cấu hình và cung cấp các tùy chọn mặc định cho các cài đặt JPA.
-Lombok
-Annotation-Based Code Generation:
+   + JPA và ORM:
+     - JPA là một API của Java để tương tác với cơ sở dữ liệu
+     - Thực hiện ánh xạ giữa các lớp đối tượng Java và bảng trong cơ sở dữ liệu
+   + Repository Pattern: các phương thức tiêu biểu cho các thao tác cơ bản với cơ sở dữ liệu được tự động tạo ra dựa vào tên của phương thức
+- Quản Lý Truy Vấn:
+   + Các quy ước đặt tên phương thức để tạo ra các câu truy vấn cơ sở dữ liệu mà không cần phải viết truy vấn SQL chi tiết
+   + Annotation @Query để viết truy vấn tùy chỉnh nếu cần khi quy ước tên quá dài
+- Hỗ trợ nhiều loại cơ sở dữ liệu quan hệ thông qua tích hợp các implementation JPA khác nhau như Hibernate, EclipseLink và OpenJPA
+- Tích hợp dễ dàng với Spring Boot, giúp tự động cấu hình và cung cấp các tùy chọn mặc định cho các cài đặt JPA
+- Lombok
+  Annotation-Based Code Generation:
 Lombok sử dụng các annotation để sinh mã nguồn tự động cho các phương thức getter, setter, constructor, equals, hashCode, và toString.
 Getter và Setter Tự Động:
 Sử dụng annotation @Getter và @Setter để tự động sinh các phương thức getter và setter cho các trường trong class.Constructor Tự Động:
