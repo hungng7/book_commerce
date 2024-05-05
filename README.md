@@ -30,3 +30,9 @@
 - ![s1](https://github.com/hungng7/book_commerce/assets/147014939/a0186753-f3b5-496c-baba-6047f5efe7f5)
 - ![s2](https://github.com/hungng7/book_commerce/assets/147014939/5ca63ee7-2ba1-4093-abca-454dc18a6aed)
 - ![s3](https://github.com/hungng7/book_commerce/assets/147014939/20f8f2de-9f5a-473b-ae0e-5f4842fc32a0)
+# Các bước thực hiện hệ thống
+- Khởi tạo Java Spring Boot với "https://start.spring.io/"
+  ![startJPA](https://github.com/hungng7/book_commerce/assets/147014939/02ae277e-96b6-4115-99ce-8a1d0a3b4a31)
+- Cấu hình application.properties
+  ![config](https://github.com/hungng7/book_commerce/assets/147014939/34a98ac7-1d5d-4405-9910-440440618680)
+
