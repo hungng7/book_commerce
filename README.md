@@ -40,9 +40,8 @@
 - Tạo các Service gồm các phương thức phục vụ truy xuất dữ liệu
 - Tạo các Controller gắn với các endpoint để xử lí các tác vụ trên trình duyệt
 - Tạo các file HTML trong thư mục templates là View mà người dùng có thể thấy và tương tác trên trình duyệt
-- Cài đặt MySQL Workbench 8.0 CE
-Thêm connection mới với
-user: root, mật khẩu: abc123
-Tạo database với tên là PhoneStore
-spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/PhoneStore
-Chạy và trải nghiệm các tính năng của ứng dụng
+- Dùng các hệ quản trị CSDL có MySQL như XAMPP, Laragon, MySQL WorkBench, ...
+- Thông tin kết nối database: user: **root**, password: 
+- Tạo database với tên **book_commerce**
+- Dùng tài khoản tạo sẵn: username: **user1**, password: **123**
+- Chạy và trải nghiệm các tính năng của trang web
