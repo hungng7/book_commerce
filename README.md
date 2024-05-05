@@ -8,19 +8,11 @@
    + RESTful Web Services:
      - Spring Web hỗ trợ phát triển RESTful Web Services thông qua Spring MVC
      - Sử dụng annotation đơn giản hóa việc tạo các RESTful endpoint
-Spring Boot và Embedded Containers:
-Spring Boot giúp tạo ra ứng dụng web độc lập và dễ triển khai.
-Cung cấp các embedded containers như Tomcat, Jetty, và Undertow để triển khai ứng dụng một cách đơn giản.
-Thymeleaf và Template Engines:
-Spring hỗ trợ sử dụng template engines như Thymeleaf để tạo giao diện người dùng.
-Dễ tích hợp với Spring MVC và hỗ trợ các tính năng như thực hiện điều kiện, vòng lặp, và biểu thức.
-Spring Security:
-Spring Web có tích hợp với Spring Security để cung cấp các tính năng xác thực và phân quyền.
-Giúp bảo vệ ứng dụng khỏi các loại tấn công bảo mật.
-WebSocket:
-Spring hỗ trợ WebSocket để xây dựng các ứng dụng thời gian thực.
-Giúp xây dựng các ứng dụng chat, cập nhật dữ liệu trực tiếp, và các ứng dụng tương tác thời gian thực khác.
-Spring Data JPA
+   + Thymeleaf (Template Engines):
+     - Hỗ trợ template engines như Thymeleaf để tạo giao diện người dùng
+     - Tích hợp với Spring MVC các tính năng thực hiện điều kiện, vòng lặp và biểu thức
+   + Spring Security: cung cấp các tính năng xác thực và phân quyền
+- Spring Data JPA
 JPA và ORM:
 JPA là một API của Java để tương tác với cơ sở dữ liệu quan hệ.
 Spring Data JPA sử dụng JPA để thực hiện ánh xạ giữa các đối tượng Java và bảng trong cơ sở dữ liệu.
