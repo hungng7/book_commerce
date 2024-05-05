@@ -45,3 +45,10 @@
 - Tạo database với tên **book_commerce**
 - Dùng tài khoản tạo sẵn: username: **user1**, password: **123**
 - Chạy và trải nghiệm các tính năng của trang web
+# Test API
+- **Book**
+  + Danh sách: ![getAllBookAPI](https://github.com/hungng7/book_commerce/assets/147014939/4f630184-aed2-4ecc-8931-bcc77aff0dba)
+  + Lọc (filter): ![filterBookAPI](https://github.com/hungng7/book_commerce/assets/147014939/283a619d-3931-46f5-8dfa-e661e5fb1310)
+  + Tìm theo tên: ![searchBookNameAPI](https://github.com/hungng7/book_commerce/assets/147014939/fba3c178-276c-442e-9d0b-2f4bc7fe30fe)
+- **Cart**
+- **Order**
