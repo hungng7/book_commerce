@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace = "~{fragment/header:: header}"></head>
+<body>
+<div th:replace = "~{fragment/navbar:: navbar}"></div>
+<section class="h-100 h-custom" style="background-color: #eee;">
+    <div class="container h-100 py-5">
+        <div class="row d-flex">
+            <a th:href="@{'/'}">
+                <div>
+                    <i class="fa fa-solid fa-arrow-left"></i>
+                    <span> Back to home </span>
+                </div>
+            </a>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card shopping-cart" style="border-radius: 15px;">
+                    <div class="card-body text-black">
+                        <div class="row">
+                            <div class="col-lg-6 px-5 py-4">
+                                <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Your products</h3>
+                                <div class="d-flex align-items-center mb-5"
+                                     th:each="book, index:${bookList}">
+
+                                    <div class="flex-shrink-0">
+                                        <img th:src="${book.image}"
+                                             class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
+                                    </div>
+
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="text-primary" th:text="${book.name}"></h5>
+                                        <h6 style="color: #9e9e9e;">Color: <span th:text="${book.color}"></span></h6>
+                                        <div class="d-flex align-items-center" th:with="cart=${cartList}">
+                                            <p class="fw-bold mb-0 me-5 pe-3" style="margin-right: 10px"
+                                               th:text="${#strings.replace(#strings.replace(#numbers.formatDecimal(cart[__${index.index}__].getQuantityPrice(), 0, 'COMMA', 2, 'POINT'), '.00', ''), ',', '.')} + 'đ'">
+                                            </p>
+                                            <div class="d-flex align-items-center">
+                                                <a th:href="@{'cart/decrease/'+ ${book.id} }" class="text-decoration-none text-dark">
+                                                    <i class="fa fa-solid fa-minus"></i>
+                                                </a>
+                                                <span th:text="${cart[__${index.index}__].getQuantity()}" style="margin-left: 10px; margin-right: 10px"></span>
+                                                <a th:href="@{'cart/increase/'+ ${book.id} }" class="text-decoration-none text-dark">
+                                                    <i class="fa fa-solid fa-plus"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a th:href="@{'cart/remove/'+ ${book.id} }" style="flex:end">
+                                            <button type="button" class="btn btn-danger">Remove</button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr class="mb-4" style="height: 2px; background-color: #1266f1; opacity: 1;">
+                                <div class="d-flex justify-content-between p-2 mb-2" style="background-color: #e1f5fe;" >
+                                    <h5 class="fw-bold mb-0">Total:</h5>
+                                    <h5 class="fw-bold mb-0"
+                                        th:text="${totalPrice}? ${#strings.replace(#strings.replace(#numbers.formatDecimal(totalPrice, 0, 'COMMA', 2, 'POINT'), '.00', ''), ',', '.')} + 'VND' : '0VND'">
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 px-5 py-4">
+                                <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment</h3>
+                                <form th:action="@{/order}" class="mb-5" method="post">
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="payerName">Payer Name</label>
+                                        <input name="payerName" type="text" id="payerName" class="form-control" size="17"/>
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="phone">Phone Number</label>
+                                        <input name="phone" type="text" id="phone" class="form-control" size="17"
+                                               maxlength="10"/>
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="payerEmail">Payer Address</label>
+                                        <input name="payerEmail" type="text" id="payerEmail" class="form-control" size="17"
+                                               maxlength="11"/>
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="payerAddress">Payer Address</label>
+                                        <input name="payerAddress" type="text" id="payerAddress" class="form-control" size="17"/>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success btn-lg">Buy now</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="w-100" th:replace = "~{fragment/footer :: footer}"></footer>
+</body>
+</html>

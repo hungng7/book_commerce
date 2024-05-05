@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace = "~{fragment/header:: header}"></head>
+<style>
+    input:focus::placeholder {
+        color: white;
+    }
+</style>
+<body>
+    <div class="d-flex justify-content-center flex-column">
+        <div th:replace = "~{fragment/navbar:: navbar}"></div>
+        <div class="row">
+            <div class="col-3">
+                <form   th:action="@{/books}"
+                        method="post">
+                    <div class="categories" style="text-align: center;">
+                        <h5 class="font-weight-bold">Categories</h5>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="category" class="form-check-input" type="checkbox" value="Manga" id="checkManga">
+                            <label class="form-check-label" for="checkManga"> Manga </label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="category" class="form-check-input" type="checkbox" value="Comic" id="checkComic">
+                            <label class="form-check-label" for="checkComic"> Comic </label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="category" class="form-check-input" type="checkbox" value="VN" id="checkVN">
+                            <label class="form-check-label" for="checkVN"> VN </label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="category" class="form-check-input" type="checkbox" value="Foreign" id="checkInter">
+                            <label class="form-check-label" for="checkInter"> Foreign </label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="category" class="form-check-input" type="checkbox" value="Knowledge" id="checkKnowLedge">
+                            <label class="form-check-label" for="checkKnowLedge">Knowledge</label>
+                        </div>
+                    </div>
+                    <div class="brands" style="text-align: center;">
+                        <h5 class="font-weight-bold">Brands</h5>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="brand" class="form-check-input" type="checkbox" id="checkToei" value="Toei">
+                            <label class="form-check-label" for="checkToei">Toei</label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="brand" class="form-check-input" type="checkbox" id="checkKD" value="Kim Dong">
+                            <label class="form-check-label" for="checkKD">Kim Dong</label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="brand" class="form-check-input" type="checkbox" id="checkCarnei" value="Carneige">
+                            <label class="form-check-label" for="checkCarnei">Carneige</label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="brand" class="form-check-input" type="checkbox" id="checkSHC" value="SHC">
+                            <label class="form-check-label" for="checkSHC">SHC</label>
+                        </div>
+                    </div>
+                    <div class="price" style="text-align: center;">
+                        <h5 class="font-weight-bold">Price</h5>
+                        <div class="form-group" style="text-align: left;">
+                            <label for="inputMinPrice">Min</label>
+                            <input type="number" name="minPrice" class="form-control" id="inputMinPrice" placeholder="0 VND">
+                        </div>
+                        <div class="form-group" style="text-align: left;">
+                            <label for="inputMaxPrice">Max</label>
+                            <input type="number" name="maxPrice" class="form-control" placeholder="100.000.000 VND" id="inputMaxPrice" >
+                        </div>
+                    </div>
+                    <div class="colors" style="text-align: center;">
+                        <h5 class="font-weight-bold">Colors</h5>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="color" class="form-check-input" type="checkbox" value="black" id="checkBlack">
+                            <label class="form-check-label" for="checkBlack">
+                                <span> Black </span>
+                            </label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="color" class="form-check-input" type="checkbox" value="white" id="checkWhite">
+                            <label class="form-check-label" for="checkWhite">
+                                <span> White </span>
+                            </label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="color" class="form-check-input" type="checkbox" value="red" id="checkRed">
+                            <label class="form-check-label" for="checkRed">
+                                <span> Red </span>
+                            </label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="color" class="form-check-input" type="checkbox" value="blue" id="checkBlue">
+                            <label class="form-check-label" for="checkBlue">
+                                <span> Blue </span>
+                            </label>
+                        </div>
+                        <div class="form-check" style="text-align: left;">
+                            <input name="color" class="form-check-input" type="checkbox" value="orange" id="checkOrange">
+                            <label class="form-check-label" for="checkOrange">
+                                <span> Orange </span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success" style="width: 100%">Filter</button>
+                </form>
+            </div>
+            <div class="col-9 mt-2" >
+                <div class="row" style="margin-bottom: 10px">
+                    <div class="col-4" th:each="book: ${listBook}" style="margin-bottom:10px">
+                        <th:block th:if="${listBook.isEmpty()}">
+                            <p class="fw-bold">Empty product solved</p>
+                        </th:block>
+                        <div class="card-container" style="display: flex;flex-direction: column;">
+                            <div class="card" style="height: 100%;">
+                                <img th:src="${book.image}" class="card-img-top" style="width: 100%;height: 100%;">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${book.name}"></h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Category: <span th:text="${book.category}"></span></li>
+                                        <li class="list-group-item">Brand: <span th:text="${book.brand}"></span></li>
+                                        <li class="list-group-item">Color: <span th:text="${book.color}"></span></li>
+                                        <li class="list-group-item">Price: <span th:text="${#strings.replace(#strings.replace(#numbers.formatDecimal(book.getPrice(), 0, 'COMMA', 2, 'POINT'), '.00', ''), ',', '.')} + VND"></span></li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center" style="justify-content: space-between">
+                                        <a th:href="@{'bookDetail?id=' + ${book.id}}" class="btn btn-primary">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="w-100" th:replace = "~{fragment/footer :: footer}"></footer>
+        </div>
+
+    </div>
+</body>
+</html>
