@@ -33,7 +33,7 @@
 # Các bước thực hiện hệ thống
 - Khởi tạo Java Spring Boot với "https://start.spring.io/"
   ![startJPA](https://github.com/hungng7/book_commerce/assets/147014939/02ae277e-96b6-4115-99ce-8a1d0a3b4a31)
-- Cấu hình application.properties
+- Cấu hình **application.properties**
   ![config](https://github.com/hungng7/book_commerce/assets/147014939/34a98ac7-1d5d-4405-9910-440440618680)
 - Tạo các Model sử dụng trong hệ thống
 - Tạo các Repository liên kết tới database
