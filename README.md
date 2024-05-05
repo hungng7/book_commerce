@@ -51,4 +51,15 @@
   + Lọc (filter): ![filterBookAPI](https://github.com/hungng7/book_commerce/assets/147014939/283a619d-3931-46f5-8dfa-e661e5fb1310)
   + Tìm theo tên: ![searchBookNameAPI](https://github.com/hungng7/book_commerce/assets/147014939/fba3c178-276c-442e-9d0b-2f4bc7fe30fe)
 - **Cart**
+  + Danh sách:  ![searchBookNameAPI](https://github.com/hungng7/book_commerce/assets/147014939/05d63e54-1284-4f2f-a1b3-da9af3cf8c17)
+  + Thêm:
+    - ![addOnCartAPI](https://github.com/hungng7/book_commerce/assets/147014939/8b42f937-6799-44a3-a93d-ec7b4755e1bc)
+    - ![addOnCartAPI_result](https://github.com/hungng7/book_commerce/assets/147014939/39398ea7-4374-48c9-ba74-4ecc3ae966ed)
+  + Xóa:
+    - Theo Book:
+         + ![removeCartWithBookIDAPI](https://github.com/hungng7/book_commerce/assets/147014939/e789237b-2920-45a6-9085-cad2c603d1bf)
+         + ![removeCartWithBookIDAPI_result](https://github.com/hungng7/book_commerce/assets/147014939/6e480808-6bc6-4ab1-b7e1-62b8835b6610)
+    - Danh sách:
+         + ![deleteCartListAPI](https://github.com/hungng7/book_commerce/assets/147014939/d88aa8cd-e8f0-44ec-a884-075745cf654f)
+         + ![deleteCartListAPI_result](https://github.com/hungng7/book_commerce/assets/147014939/9067c738-ee00-4464-83ca-4d300ced65d1)
 - **Order**
