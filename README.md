@@ -35,4 +35,14 @@
   ![startJPA](https://github.com/hungng7/book_commerce/assets/147014939/02ae277e-96b6-4115-99ce-8a1d0a3b4a31)
 - Cấu hình application.properties
   ![config](https://github.com/hungng7/book_commerce/assets/147014939/34a98ac7-1d5d-4405-9910-440440618680)
-
+- Tạo các Model sử dụng trong hệ thống
+- Tạo các Repository liên kết tới database
+- Tạo các Service gồm các phương thức phục vụ truy xuất dữ liệu
+- Tạo các Controller gắn với các endpoint để xử lí các tác vụ trên trình duyệt
+- Tạo các file HTML trong thư mục templates là View mà người dùng có thể thấy và tương tác trên trình duyệt
+- Cài đặt MySQL Workbench 8.0 CE
+Thêm connection mới với
+user: root, mật khẩu: abc123
+Tạo database với tên là PhoneStore
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/PhoneStore
+Chạy và trải nghiệm các tính năng của ứng dụng
